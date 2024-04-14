@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href={% static "review/styles.css" %}>
 </head>
 <body>
     <form method="POST">
         {% csrf_token %}
-    {{form}}
+    <!-- {{form}} -->
+    <div class="form-control {% if form.user_name.errors %}errors{% endif %} " >
+        {{form.user_name.label_tag}}
+        {{form.user_name}}
+        {{form.user_name.errors}}
+    </div>
+    <div class="form-control {% if form.user_name.errors %}errors{% endif %} " >
+        {{form.review_text.label_tag}}
+        {{form.review_text}}
+        {{form.review_text.errors}}
+    </div>
     <button>send</button>
     </form>
 </body>
