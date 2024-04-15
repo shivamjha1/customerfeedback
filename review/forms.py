@@ -6,6 +6,10 @@ from .models import Review
 #     review_text=forms.CharField(label="Your Review",max_length=200,widget=forms.Textarea)
 #     rating=forms.IntegerField(min_value=1,max_value=5)
 
+
+
+
+
 class ReviewForm(forms.ModelForm):
     class Meta:
         model=Review
@@ -14,7 +18,7 @@ class ReviewForm(forms.ModelForm):
         labels={
             "user_name":"Your Name",
             "review_text":"Your Feedback",
-            "rating":"Your Rating"
+            "rating":"Your Rating",
         }
         error_messages={
             "user_name":{
