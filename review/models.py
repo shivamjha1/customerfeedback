@@ -11,7 +11,7 @@ class Review(models.Model):
         ('Bad', 'Bad'),
     ]
     like = models.CharField(
-        choices=CHOICES,null=True,max_length=20
+        choices=CHOICES,default="Good",max_length=20
     )
 
     

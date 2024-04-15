@@ -1,14 +1,7 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href={% static "review/styles.css" %}>
-</head>
-<body>
+{% extends "reviews/base.html" %}
+{% block title %}Your Review{% endblock %}
+
+{% block content %}
     <form method="POST">
         {% csrf_token %}
     <!-- {{form}} -->
@@ -21,5 +14,4 @@
     {% endfor %}
     <button>send</button>
     </form>
-</body>
-</html>
+{% endblock %}
