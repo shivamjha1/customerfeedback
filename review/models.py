@@ -6,3 +6,5 @@ class Review(models.Model):
     review_text=models.TextField(max_length=200)
     rating=models.IntegerField()
     
+    def __str__(self) -> str:
+        return f"{self.user_name} {self.rating}"
